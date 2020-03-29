@@ -105,11 +105,14 @@ def test():
         test_loss /= len(test_loader.dataset)
         print('====> Test set loss: {:.4f}'.format(test_loss))
 
-for i in range(10):
-    VAEs[i].load_state_dict(torch.load('vae' + str(i) + '.pt'))
-# for e in range(30):
-#     for c in range(10):
-#         train(e,c)
+#uncomment if you have trained models
+# for i in range(10):
+#     VAEs[i].load_state_dict(torch.load('vae' + str(i) + '.pt'))
+
+#comment if you don't want to train
+for e in range(30):
+    for c in range(10):
+        train(e,c)
     # test()
 import matplotlib.pyplot as plt
 import cv2
